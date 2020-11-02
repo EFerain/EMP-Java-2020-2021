@@ -114,4 +114,61 @@ public class TestEmployee {
         assertFalse(employee.isDatePay(MondayDate));
 
     }
+
+    // ======== Commission ========
+    @Test
+    public void createCommissionEmployee()
+    {
+        employee.setPayClassification(new CommissionClassification(1000));
+        employee.setPayMethod(new CashMethod());
+        employee.setPaySchedule(new TwoWeekPaySchedule());
+
+        LocalDate date = LocalDate.of(2019,10,1);
+        LocalDate nextDate = LocalDate.of(2019,10,2);
+
+        PaymentClassification classification = employee.getPayClassification();
+        ((CommissionClassification)classification).addSalesReceipt(new SalesReceipt(date, 200));
+        ((CommissionClassification)classification).addSalesReceipt(new SalesReceipt(nextDate, 150));
+
+        employee.payDay(pc);
+        double pay = pc.getSalary();
+
+        assertEquals(1350, pay, 0.01);
+
+        PaymentSchedule ps = employee.getPaySchedule();
+        assertTrue(ps instanceof TwoWeekPaySchedule);
+
+        PaymentMethod pm = employee.getPayMethod();
+        assertEquals("cash", pm.toString());
+    }
+
+    @Test
+    public void alacon()
+    {
+        LocalDate date = LocalDate.of(2020, 10, 2);
+        LocalDate date1 = LocalDate.of(2020, 10, 9);
+        LocalDate date2 = LocalDate.of(2020, 10, 16);
+        LocalDate date3 = LocalDate.of(2020, 10, 23);
+        LocalDate date4 = LocalDate.of(2020, 10, 30);
+        LocalDate date5 = LocalDate.of(2020, 11, 6);
+        LocalDate date6 = LocalDate.of(2020, 11, 13);
+        LocalDate date7 = LocalDate.of(2020, 11, 20);
+        LocalDate date8 = LocalDate.of(2020, 11, 27);
+        LocalDate date9 = LocalDate.of(2020, 12, 4);
+        LocalDate date10 = LocalDate.of(2020, 10, 1);
+
+        TwoWeekPaySchedule bidule = new TwoWeekPaySchedule();
+
+        assertTrue(!bidule.isDatePay(date));
+        assertTrue(bidule.isDatePay(date1));
+        assertTrue(!bidule.isDatePay(date2));
+        assertTrue(bidule.isDatePay(date3));
+        assertTrue(!bidule.isDatePay(date4));
+        assertTrue(bidule.isDatePay(date5));
+        assertTrue(!bidule.isDatePay(date6));
+        assertTrue(bidule.isDatePay(date7));
+        assertTrue(!bidule.isDatePay(date8));
+        assertTrue(!bidule.isDatePay(date9));
+        assertTrue(!bidule.isDatePay(date10));
+    }
 }

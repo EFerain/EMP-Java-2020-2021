@@ -28,39 +28,23 @@ public class HourlyClassification implements PaymentClassification
     }
 
     // ======== Methods ========
+    // ==== calculatePay ====
     @Override
     public double calculatePay(PayCheck pc)
     {
         double money = 0;
-        LocalDate latestDate;
 
         if(!this.listTimeCards.isEmpty())
         {
-            latestDate = this.listTimeCards.get(0).getDate();
-
-            //Last time Employee worked
-            for(TimeCard timeCard : this.listTimeCards)
+            for(TimeCard timeCard : this.getWeek())
             {
-                if(latestDate.isBefore(timeCard.getDate()))
+                // Worked less than 8 hours
+                money += timeCard.getTime() * this.amount;
+
+                // Extra time > 8
+                if(timeCard.getTime() > 8)
                 {
-                    latestDate = timeCard.getDate();
-                }
-            }
-
-            for(TimeCard timeCard : this.listTimeCards)
-            {
-                TemporalField woy = WeekFields.of(Locale.getDefault()).weekOfWeekBasedYear();
-
-                if(latestDate.getYear() == timeCard.getDate().getYear() && latestDate.get(woy) == timeCard.getDate().get(woy))
-                {
-                    // Worked less than 8 hours
-                    money += timeCard.getTime() * this.amount;
-
-                    // Extra time > 8
-                    if(timeCard.getTime() > 8)
-                    {
-                        money += (timeCard.getTime() - 8) * 0.5 * this.amount;
-                    }
+                    money += (timeCard.getTime() - 8) * 0.5 * this.amount;
                 }
             }
         }
@@ -68,8 +52,38 @@ public class HourlyClassification implements PaymentClassification
         return money;
     }
 
+    // ==== addTimeCard ====
     public void addTimeCard(TimeCard tc)
     {
         this.listTimeCards.add(tc);
+    }
+
+    // ======== Classe interne ========
+    private List<TimeCard> getWeek()
+    {
+        List<TimeCard> listWeeklyTimecard = new ArrayList<TimeCard>();
+
+        LocalDate latestDate = this.listTimeCards.get(0).getDate();
+
+        //Last time Employee worked
+        for(TimeCard timeCard : this.listTimeCards)
+        {
+            if(latestDate.isBefore(timeCard.getDate()))
+            {
+                latestDate = timeCard.getDate();
+            }
+        }
+
+        for(TimeCard timeCard : this.listTimeCards)
+        {
+            TemporalField woy = WeekFields.of(Locale.getDefault()).weekOfWeekBasedYear();
+
+            if(latestDate.getYear() == timeCard.getDate().getYear() && latestDate.get(woy) == timeCard.getDate().get(woy))
+            {
+                listWeeklyTimecard.add(timeCard);
+            }
+        }
+
+        return listWeeklyTimecard;
     }
 }
