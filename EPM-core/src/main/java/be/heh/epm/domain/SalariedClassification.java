@@ -6,11 +6,6 @@ public class SalariedClassification implements PaymentClassification
     private double amount;
 
     // ======== Constructor ========
-    public SalariedClassification()
-    {
-        // VOID
-    }
-
     public SalariedClassification(double amount)
     {
         this.amount = amount;

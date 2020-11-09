@@ -13,8 +13,6 @@ public class Employee
     @Getter @Setter private String address;
     @Getter @Setter private String mail;
 
-    @Getter @Setter private double commissionRate;
-
     @Getter @Setter private PaymentClassification payClassification;
     @Getter @Setter private PaymentMethod payMethod;
     @Getter @Setter private PaymentSchedule paySchedule;

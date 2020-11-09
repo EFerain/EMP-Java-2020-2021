@@ -17,11 +17,6 @@ public class HourlyClassification implements PaymentClassification
     private List<TimeCard> listTimeCards = new ArrayList<TimeCard>();
 
     // ======== Constructor ========
-    public HourlyClassification()
-    {
-        // VOID
-    }
-
     public HourlyClassification(double amount)
     {
         this.amount = amount;

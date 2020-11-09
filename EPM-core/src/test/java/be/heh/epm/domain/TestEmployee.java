@@ -119,7 +119,7 @@ public class TestEmployee {
     @Test
     public void createCommissionEmployee()
     {
-        employee.setPayClassification(new CommissionClassification(1000));
+        employee.setPayClassification(new CommissionClassification(1000, 10));
         employee.setPayMethod(new CashMethod());
         employee.setPaySchedule(new TwoWeekPaySchedule());
 

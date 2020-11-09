@@ -10,11 +10,6 @@ public class DirectDepositMethod implements PaymentMethod
     @Getter @Setter private String account;
 
     // ======== Constructor ========
-    public DirectDepositMethod()
-    {
-        // VOID
-    }
-
     public DirectDepositMethod(String bank, String account)
     {
         this.bank = bank;

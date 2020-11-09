@@ -11,20 +11,18 @@ public class CommissionClassification implements PaymentClassification
 {
     // ======== Attributes ========
     private double amount;
+    private double commissionRate;
     private List<SalesReceipt> listSalesReceipt = new ArrayList<SalesReceipt>();
 
     // ======== Constructor ========
-    public CommissionClassification()
-    {
-        // VOID
-    }
-
-    public CommissionClassification(double amount)
+    public CommissionClassification(double amount, double commissionRate)
     {
         this.amount = amount;
+        this.commissionRate = commissionRate;
     }
 
     // ======== Methods ========
+    // ==== calculatePay ====
     @Override
     public double calculatePay(PayCheck pc)
     {
@@ -60,6 +58,7 @@ public class CommissionClassification implements PaymentClassification
         return money;
     }
 
+    // ==== addSalesReceipt ====
     public void addSalesReceipt(SalesReceipt sr)
     {
         this.listSalesReceipt.add(sr);

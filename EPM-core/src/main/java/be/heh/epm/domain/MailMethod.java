@@ -9,11 +9,6 @@ public class MailMethod implements PaymentMethod
     @Getter @Setter private String mail;
 
     // ======== Constructor ========
-    public MailMethod()
-    {
-        // VOID
-    }
-
     public MailMethod(String mail)
     {
         this.mail = mail;

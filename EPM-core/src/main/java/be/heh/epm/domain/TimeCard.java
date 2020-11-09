@@ -12,11 +12,6 @@ public class TimeCard
     @Getter private double time;
 
     // ======== Constructor ========
-    public TimeCard()
-    {
-        // VOID
-    }
-
     public TimeCard(LocalDate date, double time)
     {
         this.date = date;
