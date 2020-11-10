@@ -127,8 +127,8 @@ public class TestEmployee {
         LocalDate nextDate = LocalDate.of(2019,10,2);
 
         PaymentClassification classification = employee.getPayClassification();
-        ((CommissionClassification)classification).addSalesReceipt(new SalesReceipt(date, 200));
-        ((CommissionClassification)classification).addSalesReceipt(new SalesReceipt(nextDate, 150));
+        ((CommissionClassification)classification).addSalesReceipt(new SalesReceipt(date, 2000));
+        ((CommissionClassification)classification).addSalesReceipt(new SalesReceipt(nextDate, 1500));
 
         employee.payDay(pc);
         double pay = pc.getSalary();

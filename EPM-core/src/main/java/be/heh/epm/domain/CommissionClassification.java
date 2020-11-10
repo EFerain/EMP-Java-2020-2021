@@ -50,7 +50,7 @@ public class CommissionClassification implements PaymentClassification
                 ((latestDate.get(woy) % 2 == 1 && latestDate.get(woy) - salesReceipt.getDate().get(woy) < 2)
                 || (latestDate.get(woy) % 2 == 0 && latestDate.get(woy) == salesReceipt.getDate().get(woy))))
                 {
-                    money += salesReceipt.getSalesAmount();
+                    money += salesReceipt.getSalesAmount() / 100 * commissionRate;
                 }
             }
         }

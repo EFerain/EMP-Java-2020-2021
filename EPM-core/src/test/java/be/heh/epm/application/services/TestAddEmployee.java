@@ -37,18 +37,7 @@ public class TestAddEmployee
     @Test
     public void addSalariedEmployee()
     {
-        int empId = 1;
-        AddSalariedEmployee t = new AddSalariedEmployee(empId, "Bob","Home",1000.00);
-        t.execute();
-
-        Employee e = Context.employeeGateway.getEmployee(empId);
-        assertEquals("Bob",e.getName());
-
-        PaymentSchedule ps = e.getPaySchedule();
-        assertTrue(ps instanceof MonthlyPaymentSchedule);
-
-        PaymentMethod pm = e.getPayMethod();
-        assertEquals("direct deposit into Fortis : be332211",pm.toString());
+        
     }
 
     // ==== Add Commission Employee (Commission + TwoWeek) ====
