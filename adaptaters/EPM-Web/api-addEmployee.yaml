@@ -1,0 +1,68 @@
+openapi: 3.0.1
+info:
+  title: Swagger EPM
+  description: API EPM
+  version: 1.0.0
+servers:
+- url: http://localhost:8080
+  description: test en locale
+paths:
+  /employees/salaried:
+    post:
+      description: Add Salaried employee
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeSalaried'
+              
+      responses:
+        '201':
+          description: the employee has been created
+          headers:
+            location:
+             schema:
+              type: string
+              format: uri
+              example: 'http://localhost:8080/employees/salaried/1'
+             description: The URI to the newly created example
+        '400':
+          description: Invalid data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  timestamp:
+                    type: string
+                    example: "2020-10-29T07:44:23.354+00:00"
+                  status:
+                    type: string
+                    example: 400
+                  errors:
+                    type: array
+                    items:
+                      type: string
+                      example: "mail : doit être une adresse électronique syntaxiquement correcte"
+components:
+  schemas:
+    EmployeeSalaried:
+      type: object
+      properties:
+        empId:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "toto"
+        address:
+          type: string
+          example: "rue de Mons"
+        mail:
+          type: string
+          example: "toto@heh.be"
+        monthlySalary:
+          type: number
+          example: 1500
+        
+    

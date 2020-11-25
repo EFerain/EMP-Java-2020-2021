@@ -8,7 +8,7 @@ import lombok.Setter;
 public class Employee
 {
     // ======== Attributes ========
-    @Getter @Setter private int id;
+    @Getter @Setter private int empId;
     @Getter @Setter private String name;
     @Getter @Setter private String address;
     @Getter @Setter private String mail;
@@ -23,9 +23,9 @@ public class Employee
         // VOID
     }
 
-    public Employee(int id, String name, String address, String mail)
+    public Employee(int empId, String name, String address, String mail)
     {
-        this.id = id;
+        this.empId = empId;
         this.name = name;
         this.address = address;
         this.mail = mail;

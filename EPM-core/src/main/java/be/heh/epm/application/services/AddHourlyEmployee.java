@@ -1,36 +1,47 @@
-package be.heh.epm.application.services;
-
-import be.heh.epm.domain.HourlyClassification;
-import be.heh.epm.domain.PaymentClassification;
 /*
     Hourly + Weekly
 */
 
+package be.heh.epm.application.services;
+
+import be.heh.epm.application.ports.in.Context;
+import be.heh.epm.domain.Employee;
+import be.heh.epm.domain.HourlyClassification;
+import be.heh.epm.domain.PaymentClassification;
 import be.heh.epm.domain.PaymentSchedule;
 import be.heh.epm.domain.WeeklyPaymentSchedule;
 
-public class AddHourlyEmployee extends AddEmployee
+public class AddHourlyEmployee
 {
     // ======== Attributes ========
+    protected Employee hourlyEmployee;
+    
     private double hourlyRate;
 
     // ======== Constructor ========
-    public AddHourlyEmployee(int id, String name, String address, String mail, double hourlyRate)
+    public AddHourlyEmployee(int empId, String name, String address, String mail, double hourlyRate)
     {
-        super(id, name, address, mail);
+        this.hourlyEmployee = new Employee(empId, name, address, mail);
         this.hourlyRate = hourlyRate;
     }
 
     // ======== Methods ========
+    // Execute
+    public void execute()
+    {
+        this.hourlyEmployee.setPayClassification(makePaymentClassification());
+        this.hourlyEmployee.setPaySchedule(makePaymentSchedule());
+
+        Context.empId.saveEmployee(hourlyEmployee.getEmpId(), hourlyEmployee);
+    }
+
     // Classification
-    @Override
     public PaymentClassification makePaymentClassification()
     {
         return new HourlyClassification(this.hourlyRate);
     }
-    
+
     // Schedule
-    @Override
     public PaymentSchedule makePaymentSchedule()
     {
         return new WeeklyPaymentSchedule();
