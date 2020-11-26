@@ -21,5 +21,5 @@ public interface EmployeeGateway
     public Employee getEmployee(int empId);
 
     // ==== Get All Employees ====
-    public ArrayList<Employee> getAllEmployee();
+    public ArrayList<Employee> getAllEmployees();
 }

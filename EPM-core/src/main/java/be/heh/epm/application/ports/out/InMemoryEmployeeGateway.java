@@ -44,7 +44,7 @@ public class InMemoryEmployeeGateway implements EmployeeGateway
 
     // ==== Get All Employees ====
     @Override
-    public ArrayList<Employee> getAllEmployee()
+    public ArrayList<Employee> getAllEmployees()
     {
         return new ArrayList<>(employee.values());
     }
