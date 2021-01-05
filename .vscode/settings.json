@@ -7,7 +7,7 @@
             "port": 5432,
             "askForPassword": true,
             "driver": "PostgreSQL",
-            "name": "EPM_GR6",
+            "name": "EPM-GR6",
             "database": "epmdb",
             "username": "postgres"
         }
