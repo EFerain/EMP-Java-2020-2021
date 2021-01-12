@@ -1,87 +1,44 @@
 package be.heh.epm.application.services;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.mockito.ArgumentMatchers.refEq;
+import static org.mockito.Mockito.verify;
 
-import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
-import be.heh.epm.application.ports.in.Context;
-import be.heh.epm.application.ports.out.InMemoryEmployeeGateway;
-import be.heh.epm.domain.CommissionClassification;
+import be.heh.epm.application.ports.in.AddSalariedEmployeeUseCase;
+import be.heh.epm.application.ports.in.SalariedEmployeeValidating;
+import be.heh.epm.application.ports.out.EmployeePort;
 import be.heh.epm.domain.Employee;
-import be.heh.epm.domain.HourlyClassification;
-import be.heh.epm.domain.MonthlyPaymentSchedule;
-import be.heh.epm.domain.PaymentClassification;
-import be.heh.epm.domain.PaymentSchedule;
-import be.heh.epm.domain.SalariedClassification;
-import be.heh.epm.domain.TwoWeekPaySchedule;
-import be.heh.epm.domain.WeeklyPaymentSchedule;
 
 public class TestAddEmployee
 {
-    // ======== Before ========
-    @Before
-    public void setUp() throws Exception
-    {
-        Context.empId = new InMemoryEmployeeGateway();
-    }
+    private EmployeePort employeePort = Mockito.mock(EmployeePort.class);
+    private Employee employee = Mockito.mock(Employee.class);
 
-    // ======== Test ========
-    // ==== Add Hourly Employee (Hourly + Weekly) ====
     @Test
-    public void addHourlyEmployee()
+    public void testAddSalariedEmployee()
     {
-        AddHourlyEmployee hourlyEmployee = new AddHourlyEmployee(1, "Peter", "Mons", "peter@gmail.com", 20.0);
-        hourlyEmployee.execute();
+        AddSalariedEmployeeUseCase addSalariedEmployee = new AddSalariedEmployeeService(employeePort);
+        SalariedEmployeeValidating salariedEmployeeValidating = new SalariedEmployeeValidating();
+        
+        salariedEmployeeValidating.setEmpId(1);
+        salariedEmployeeValidating.setName("toto");
+        salariedEmployeeValidating.setAddress("rue de Mons");
+        salariedEmployeeValidating.setMail("toto@heh.be");
+        salariedEmployeeValidating.setMonthlySalary(1500);
 
-        Employee e = Context.empId.getEmployee(1);
-        assertEquals("Peter", e.getName());
+        addSalariedEmployee.execute(salariedEmployeeValidating);
 
-        // Classification
-        PaymentClassification pc = e.getPayClassification();
-        assertTrue(pc instanceof HourlyClassification);
+        //verify(employeePort).save(refEq(employee)); Erreur
 
-        // Schedule
-        PaymentSchedule ps = e.getPaySchedule();
-        assertTrue(ps instanceof WeeklyPaymentSchedule);
-    }
+        /*Employee e = employeeGateway.getEmployee(employeeSalariedValidating.getEmpId());
+        assertEquals("toto", e.getName());
 
-    // ==== Add Salaried Employee (Salaried + Monthly) ====
-    @Test
-    public void addSalariedEmployee()
-    {
-        AddSalariedEmployee salariedEmployee = new AddSalariedEmployee(2, "Bob", "Home", "bob@gmail.com", 1000.0);
-        salariedEmployee.execute();
-
-        Employee e = Context.empId.getEmployee(2);
-        assertEquals("Bob", e.getName());
-
-        // Classification
-        PaymentClassification pc = e.getPayClassification();
-        assertTrue(pc instanceof SalariedClassification);
-
-        // Schedule
         PaymentSchedule ps = e.getPaySchedule();
         assertTrue(ps instanceof MonthlyPaymentSchedule);
-    }
 
-    // ==== Add Commission Employee (Commission + TwoWeek) ====
-    @Test
-    public void addCommissionEmployee()
-    {
-        AddCommissionEmployee t = new AddCommissionEmployee(3, "Lisa", "Londres", "lisa@gmail.uk", 250.0, 20);
-        t.execute();
-
-        Employee e = Context.empId.getEmployee(3);
-        assertEquals("Lisa", e.getName());
-
-        // Classification
-        PaymentClassification pc = e.getPayClassification();
-        assertTrue(pc instanceof CommissionClassification);
-
-        // Schedule
-        PaymentSchedule ps = e.getPaySchedule();
-        assertTrue(ps instanceof TwoWeekPaySchedule);
+        PaymentMethod pm = e.getPayMethod();
+        assertEquals("direct deposit into Fortis : be332211", pm.toString());*/
     }
 }

@@ -37,6 +37,16 @@ dependencies {
     // Lombok
 	testCompileOnly 'org.projectlombok:lombok:1.18.16'
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
+
+    // Constraints validator
+    compile 'org.hibernate.validator:hibernate-validator:6.2.0.Final'
+
+    compile 'org.apache.tomcat.embed:tomcat-embed-el:9.0.33'
+
+    compile 'org.springframework.boot:spring-boot-starter-test:2.3.5.RELEASE'
+
+    // Implementation projects
+    implementation project(':common')
 }
 
 /*

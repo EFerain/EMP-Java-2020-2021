@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch TestApplication",
+            "request": "launch",
+            "mainClass": "be.heh.epm.adapter.persistence.TestApplication",
+            "projectName": "EPM-persistence"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-EpmWebApplication<EPM-web>",
             "request": "launch",
             "cwd": "${workspaceFolder}",

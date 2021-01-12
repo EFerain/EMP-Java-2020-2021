@@ -13,8 +13,16 @@ public class WeeklyPaymentSchedule implements PaymentSchedule
 
     // ======== Methods ========
     @Override
-    public boolean isDatePay(LocalDate date)
+    public boolean isPayDate(LocalDate date)
     {
-        return (date.getDayOfWeek() == DayOfWeek.FRIDAY);
+        DayOfWeek dayOfWeek = date.getDayOfWeek();
+
+        return dayOfWeek.equals(DayOfWeek.FRIDAY);
+    }
+
+    @Override
+    public String toString()
+    {
+        return "monthly";
     }
 }

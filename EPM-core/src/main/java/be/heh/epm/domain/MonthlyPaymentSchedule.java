@@ -1,6 +1,7 @@
 package be.heh.epm.domain;
 
 import java.time.LocalDate;
+import java.time.temporal.TemporalAdjusters;
 
 public class MonthlyPaymentSchedule implements PaymentSchedule
 {
@@ -11,11 +12,29 @@ public class MonthlyPaymentSchedule implements PaymentSchedule
     }
 
     // ======== Methods ========
-    @Override
-    public boolean isDatePay(LocalDate date)
+    // ==== Know the date ====
+    // GET last day of the month
+    private LocalDate getLastDayOfMonth(LocalDate date)
     {
-        return (date.getDayOfMonth() == date.lengthOfMonth());
+        return date.with(TemporalAdjusters.lastDayOfMonth());
+    }
 
-        // TODO jours ouvrables
+    // IS last day of the month (true or false)
+    private boolean isLastDayOfMonth(LocalDate date)
+    {
+        return getLastDayOfMonth(date).equals(date);
+    }
+
+    // ==== isPayDate ====
+    @Override
+    public boolean isPayDate(LocalDate date)
+    {
+        return isLastDayOfMonth(date);
+    }
+
+    // ==== toString ====
+    public String toString()
+    {
+        return "monthly";
     }
 }

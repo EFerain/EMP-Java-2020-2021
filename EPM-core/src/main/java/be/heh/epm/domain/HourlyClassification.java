@@ -1,84 +1,79 @@
 package be.heh.epm.domain;
 
 import java.time.LocalDate;
-import java.time.temporal.TemporalField;
-import java.time.temporal.WeekFields;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+import java.util.HashMap;
+import java.util.Map;
 
 import lombok.Getter;
-import lombok.Setter;
 
 public class HourlyClassification implements PaymentClassification
 {
     // ======== Attributes ========
-    @Getter @Setter private double amount;
-    private List<TimeCard> listTimeCards = new ArrayList<TimeCard>();
+    @Getter private double hourlyRate;
+    private Map<LocalDate, TimeCard> timeCardMap = new HashMap<>();
 
     // ======== Constructor ========
-    public HourlyClassification(double amount)
+    public HourlyClassification(double hourlyRate)
     {
-        this.amount = amount;
+        this.hourlyRate = hourlyRate;
     }
 
     // ======== Methods ========
+    // ==== for TimeCard ====
+    // TimeCard 
+    public TimeCard getTimeCard(LocalDate date)
+    {
+        return timeCardMap.get(date);
+    }
+
+    // addTimeCard
+    public void addTimeCard(TimeCard timeCard)
+    {
+        timeCardMap.put(timeCard.getDate(),timeCard);
+    }
+
     // ==== calculatePay ====
     @Override
-    public double calculatePay(PayCheck pc)
+    public double calculatePay(PayCheck payCheck)
     {
-        double money = 0;
+        double totalPay = 0;
 
-        if(!this.listTimeCards.isEmpty())
+        for(TimeCard timeCard : timeCardMap.values())
         {
-            for(TimeCard timeCard : this.getWeek())
+            if(isInPayPeriod(timeCard, payCheck.getDate()))
             {
-                // Worked less than 8 hours
-                money += timeCard.getTime() * this.amount;
-
-                // Extra time > 8
-                if(timeCard.getTime() > 8)
-                {
-                    money += (timeCard.getTime() - 8) * 0.5 * this.amount;
-                }
+                totalPay += calculatePayForTimeCard(timeCard);
             }
+            
         }
 
-        return money;
+        return totalPay;
     }
 
-    // ==== addTimeCard ====
-    public void addTimeCard(TimeCard tc)
+    // ==== calculatePayForTimeCard ====
+    private double calculatePayForTimeCard(TimeCard timeCard)
     {
-        this.listTimeCards.add(tc);
+        double hours = timeCard.getHours();
+        double overtime = Math.max(0.0, hours-8.0);
+        double straightTime = hours - overtime;
+
+        return straightTime*hourlyRate + overtime*hourlyRate*1.5;
     }
 
-    // ======== Classe interne ========
-    private List<TimeCard> getWeek()
+    // ==== isInPayPeriod ====
+    private boolean isInPayPeriod(TimeCard card, LocalDate payPeriod)
     {
-        List<TimeCard> listWeeklyTimecard = new ArrayList<TimeCard>();
+        LocalDate payPeriodEndDate = payPeriod;
+        LocalDate payPeriodStartDate = payPeriod.minusDays(5);
 
-        LocalDate latestDate = this.listTimeCards.get(0).getDate();
+        return card.getDate().isAfter(payPeriodStartDate) || card.getDate().isEqual(payPeriodStartDate) &&
+                card.getDate().isBefore(payPeriodEndDate) || card.getDate().isEqual(payPeriodEndDate);
+    }
 
-        //Last time Employee worked
-        for(TimeCard timeCard : this.listTimeCards)
-        {
-            if(latestDate.isBefore(timeCard.getDate()))
-            {
-                latestDate = timeCard.getDate();
-            }
-        }
-
-        for(TimeCard timeCard : this.listTimeCards)
-        {
-            TemporalField woy = WeekFields.of(Locale.getDefault()).weekOfWeekBasedYear();
-
-            if(latestDate.getYear() == timeCard.getDate().getYear() && latestDate.get(woy) == timeCard.getDate().get(woy))
-            {
-                listWeeklyTimecard.add(timeCard);
-            }
-        }
-
-        return listWeeklyTimecard;
+    // ==== toString ====
+    @Override
+    public String toString()
+    {
+        return "hourly";
     }
 }

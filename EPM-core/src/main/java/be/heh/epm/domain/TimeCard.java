@@ -2,22 +2,29 @@ package be.heh.epm.domain;
 
 import java.time.LocalDate;
 
-import lombok.Getter;
-import lombok.Setter;
-
 public class TimeCard
 {
     // ======== Attributes ========
-    @Getter @Setter private LocalDate date;
-    @Getter private double time;
+    private LocalDate date;
+    private double hours;
 
     // ======== Constructor ========
-    public TimeCard(LocalDate date, double time)
+    public TimeCard(LocalDate date, double hours)
     {
         this.date = date;
-        this.time = time;
+        this.hours = hours;
     }
 
     // ======== Methods ========
-    // VOID
+    // ==== getDate ====
+    public LocalDate getDate()
+    {
+        return date;
+    }
+
+    // ==== getHours ====
+    public double getHours()
+    {
+        return hours;
+    }
 }

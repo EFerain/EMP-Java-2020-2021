@@ -23,6 +23,13 @@ public class Employee
         // VOID
     }
 
+    public Employee(String name, String address, String mail)
+    {
+        this.name = name;
+        this.address = address;
+        this.mail = mail;
+    }
+
     public Employee(int empId, String name, String address, String mail)
     {
         this.empId = empId;
@@ -39,10 +46,11 @@ public class Employee
     {
         double salary = payClassification.calculatePay(payCheck);
         payCheck.setPay(salary);
+        payMethod.pay(payCheck);
     }
 
     public boolean isDatePay(LocalDate date)
     {
-        return paySchedule.isDatePay(date);
+        return paySchedule.isPayDate(date);
     }
 }

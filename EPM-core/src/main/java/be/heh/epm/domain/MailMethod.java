@@ -1,12 +1,11 @@
 package be.heh.epm.domain;
 
 import lombok.Getter;
-import lombok.Setter;
 
 public class MailMethod implements PaymentMethod
 {
     // ======== Attributes ========
-    @Getter @Setter private String mail;
+    @Getter private String mail;
 
     // ======== Constructor ========
     public MailMethod(String mail)
@@ -18,6 +17,12 @@ public class MailMethod implements PaymentMethod
     @Override
     public String toString()
     {
-        return "mail : " + this.mail;
+        return String.format("mail : %s", mail);
+    }
+
+    @Override
+    public void pay(PayCheck payCheck)
+    {
+        payCheck.setField("Disposition", "Mail");
     }
 }

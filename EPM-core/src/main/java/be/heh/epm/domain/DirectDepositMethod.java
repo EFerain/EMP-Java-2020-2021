@@ -1,13 +1,12 @@
 package be.heh.epm.domain;
 
 import lombok.Getter;
-import lombok.Setter;
 
 public class DirectDepositMethod implements PaymentMethod
 {
     // ======== Attributes ========
-    @Getter @Setter private String bank;
-    @Getter @Setter private String account;
+    @Getter private String bank;
+    @Getter private String account;
 
     // ======== Constructor ========
     public DirectDepositMethod(String bank, String account)
@@ -21,5 +20,11 @@ public class DirectDepositMethod implements PaymentMethod
     public String toString()
     {
         return "direct deposit into " + this.bank + " : " + this.account;
+    }
+
+    @Override
+    public void pay(PayCheck payCheck)
+    {
+        payCheck.setField("Disposition", "Bank");
     }
 }

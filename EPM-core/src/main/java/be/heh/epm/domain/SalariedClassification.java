@@ -1,20 +1,27 @@
 package be.heh.epm.domain;
 
+import lombok.Getter;
+
 public class SalariedClassification implements PaymentClassification
 {
     // ======== Attributes ========
-    private double amount;
+    @Getter private double salary;
 
     // ======== Constructor ========
-    public SalariedClassification(double amount)
+    public SalariedClassification(double salary)
     {
-        this.amount = amount;
+        this.salary = salary;
     }
 
     // ======== Methods ========
     @Override
-    public double calculatePay(PayCheck pc)
+    public double calculatePay(PayCheck payCheck)
     {
-        return amount;
+        return salary;
+    }
+
+    public String toString()
+    {
+        return "salaried";
     }
 }

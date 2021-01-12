@@ -1,43 +1,40 @@
 package be.heh.epm.adapter.web;
 
-//import be.heh.epm.adapter.persistence.DataBaseHelper;
-import be.heh.epm.adapter.web.model.Employee;
-
+import be.heh.epm.application.ports.in.SalariedEmployeeValidating;
+import be.heh.epm.application.ports.in.AddSalariedEmployeeUseCase;
+import be.heh.epm.common.WebAdapter;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
+import java.net.URI;
+
+@WebAdapter
 @RestController
 public class EmployeeController
 {
-    //DataBaseHelper db = new DataBaseHelper();
+    private AddSalariedEmployeeUseCase addSalariedEmployee;
 
-    @GetMapping(value="/")
-    public String index()
-    {
-        return "EPM : Employee Payroll Management";
+    public EmployeeController(AddSalariedEmployeeUseCase addSalariedEmployee){
+        this.addSalariedEmployee = addSalariedEmployee;
     }
 
-    @GetMapping(value="/Employees")
-    public String ShowAllEmployees()
-    {
-        return "Vue des employés";
-    }
-
-    @GetMapping(value="/Employee/{empId}")
-    public ResponseEntity getEmployee(@PathVariable(name = "empId") int empId)
-    {
-        Employee employee = new Employee();
-        employee.setId(empId);
-        //db.getEmployee(employee);
+    @CrossOrigin
+    @PostMapping("/employees/salaried")
+    ResponseEntity<Void> newEmployee(@Valid @RequestBody SalariedEmployeeValidating newEmployee) {
 
 
-        if (employee.getId() == 0)
-        {
-            return ResponseEntity.notFound().build();
-        }
-        else
-        {
-            return ResponseEntity.ok(employee);
-        }
+        addSalariedEmployee.execute(newEmployee);
+
+        URI location = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(newEmployee.getEmpId())
+                .toUri();
+        return ResponseEntity.created(location).build();
     }
 }
