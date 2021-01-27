@@ -66,44 +66,66 @@ public class EmployeePersistenceAdapter implements EmployeePort
     @Override
     public Employee getEmployee(int empId)
     {
-        return null;
-    }
+        Employee employee = new Employee();
 
-    /*
-    @Override
-    public Employee getEmployee(int empId)
-    {
-        try
+        String sql = "SELECT * FROM public.employees WHERE empid = ?";
+
+        try (PreparedStatement ps = this.connection.prepareStatement(sql))
         {
-            Employee employee = jdbcTemplate.queryForObject("SELECT * FROM EMPLOYEE WHERE EMPID = ?",
-                    new Object[]{empId},
-                    (rs, rowNum) -> {
-                        Employee e = new Employee();
-                        e.setEmpId(rs.getInt("EMPID"));
-                        e.setName(rs.getString("NAME"));
-                        e.setAddress(rs.getString("ADDRESS"));
-                        e.setMail(rs.getString("MAIL"));
+            ps.setInt(1, empId);
 
-                        return e;
-                    });
-            logger.info("Recovery of the employee by id {} in the database", empId);
+            ResultSet rs = ps.executeQuery();
 
-            return employee;
+            if(rs.next())
+            {
+                employee.setEmpId(rs.getInt("empid"));
+                employee.setName(rs.getString("name"));
+                employee.setAddress(rs.getString("address"));
+                employee.setMail(rs.getString("mail"));
+            }
+            else
+            {
+                System.out.println("Enabled to find the user with id : " + empId);
+            }
         }
-        catch (EmptyResultDataAccessException e)
+        catch (SQLException e)
         {
-            logger.error("Employee with id {} was not found", empId);
-
-            return null;
+            System.out.println("Ou ici ?\n" + e.getMessage());
         }
+
+        return employee;
     }
-    */
 
     // Get ALL employees
     @Override
     public ArrayList<Employee> getAllEmployee()
     {
-        return null;
+        ArrayList<Employee> employees = new ArrayList<>();
+
+        String sql = "SELECT * FROM public.employees";
+
+        try (PreparedStatement ps = this.connection.prepareStatement(sql))
+        {
+            ResultSet rs = ps.executeQuery();
+
+            while(rs.next())
+            {
+                Employee employee = new Employee();
+
+                employee.setEmpId(rs.getInt("empid"));
+                employee.setName(rs.getString("name"));
+                employee.setAddress(rs.getString("address"));
+                employee.setMail(rs.getString("mail"));
+
+                employees.add(employee);
+            }
+        }
+        catch (SQLException e)
+        {
+            System.out.println("Ou ici ?\n" + e.getMessage());
+        }
+
+        return employees;
     }
 
     // ==== Save ====
@@ -131,13 +153,13 @@ public class EmployeePersistenceAdapter implements EmployeePort
                 }
                 catch (SQLException e)
                 {
-                    System.out.println("Là ?\n" + e.getMessage());
+                    System.out.println("Error 1 :\n" + e.getMessage());
                 }
             }
         }
         catch (SQLException e)
         {
-            System.out.println("Ou ici ?\n" + e.getMessage());
+            System.out.println("Error 2 :\n" + e.getMessage());
         }
 
         return employee;
@@ -147,7 +169,26 @@ public class EmployeePersistenceAdapter implements EmployeePort
     @Override
     public void deleteEmployee(int empId)
     {
-        String sql = "DELETE FROM public.employees WHERE empid = ?";
+        //Check if a user have this id
+        String sql = "SELECT * FROM public.employees WHERE empid = ?";
+
+        try (PreparedStatement ps = this.connection.prepareStatement(sql))
+        {
+            ps.setInt(1, empId);
+
+            ResultSet rs = ps.executeQuery();
+
+            if(!rs.next())
+            {
+                System.out.println("Enabled to find the employee with id : " + empId);
+            }
+        }
+        catch (SQLException e)
+        {
+            System.out.println("Error :\n" + e.getMessage());
+        }
+
+        sql = "DELETE FROM public.employees WHERE empid = ?";
 
         try (PreparedStatement ps = this.connection.prepareStatement(sql))
         {
@@ -156,7 +197,7 @@ public class EmployeePersistenceAdapter implements EmployeePort
         }
         catch (SQLException se)
         {
-            System.out.println("Failed to delete the employee\n" + se);
+            System.out.println("Error :\n" + se);
         }
     }
 }

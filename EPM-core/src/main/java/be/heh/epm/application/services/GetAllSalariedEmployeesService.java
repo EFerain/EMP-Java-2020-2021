@@ -1,26 +1,28 @@
 package be.heh.epm.application.services;
 
+import be.heh.epm.application.ports.in.GetAllSalariedEmployeesUseCase;
 import be.heh.epm.application.ports.in.GetSalariedEmployeeUseCase;
-import be.heh.epm.application.ports.in.SalariedEmployeeValidating;
 import be.heh.epm.application.ports.out.EmployeePort;
 import be.heh.epm.common.UseCase;
 import be.heh.epm.domain.Employee;
 
+import java.util.ArrayList;
+
 @UseCase
-public class GetSalariedEmployeeService implements GetSalariedEmployeeUseCase
+public class GetAllSalariedEmployeesService implements GetAllSalariedEmployeesUseCase
 {
     // ======== Attributes ========
     private EmployeePort employeePort;
 
     // ======== Constructor ========
-    public GetSalariedEmployeeService(EmployeePort employeePort)
+    public GetAllSalariedEmployeesService(EmployeePort employeePort)
     {
         this.employeePort = employeePort;
     }
 
     // ======== Methods ========
-    public Employee execute(Integer salariedEmployeeValidatingId)
+    public ArrayList<Employee> execute()
     {
-        return employeePort.getEmployee(salariedEmployeeValidatingId);
+        return employeePort.getAllEmployee();
     }
 }
