@@ -63,5 +63,13 @@ application {
 */
 
 test {
-	useJUnitPlatform()
+    useJUnitPlatform()
+}
+
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = true
 }

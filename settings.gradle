@@ -13,3 +13,7 @@ include 'EPM-core'
 include 'EPM-configuration'
 include 'adapters:EPM-persistence'
 include 'adapters:EPM-web'
+include 'EPM-configuration'
+include 'EPM-configuration'
+include 'EPM-configuration'
+

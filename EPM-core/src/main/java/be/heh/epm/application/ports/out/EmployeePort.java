@@ -15,10 +15,10 @@ public interface EmployeePort
     Employee save(Employee employee);
 
     // ==== Delete ====
-    void deleteEmployee(int empID);
+    void deleteEmployee(int empId);
 
     // ==== Get Employee ====
-    Employee getEmployee(int empID);
+    Employee getEmployee(int empId);
 
     // ==== Get All Employee ====
     ArrayList<Employee> getAllEmployee();

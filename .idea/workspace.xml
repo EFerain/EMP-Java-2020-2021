@@ -23,113 +23,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a7f7ccf-d4a8-4d1d-8bf5-ee0b294c4989" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25-11-20_10_44_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25-11-20_10_44__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/application/ports/in/Context.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/application/ports/out/EmployeeGateway.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/application/ports/out/InMemoryEmployeeGateway.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/application/services/AddCommissionEmployee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/application/services/AddHourlyEmployee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/application/services/AddSalariedEmployee.class" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/application/services/AddSalariedEmployee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/application/services/ChgEmpAddress.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/application/services/ChgEmpName.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/application/services/ChgEmpToCommission.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/application/services/ChgEmpToDirectDepositMethod.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/application/services/ChgEmpToHourly.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/application/services/ChgEmpToMailMethod.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/application/services/ChgEmpToSalaried.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/application/services/DeleteEmployee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/application/services/PayDay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/application/services/PostSalesReceipt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/application/services/PostTimeCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/CashMethod.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/CommissionClassification.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/DirectDepositMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/DirectDepositMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/HourlyClassification.class" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/HourlyClassification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/MailMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/MailMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/MonthlyPaymentSchedule.class" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/MonthlyPaymentSchedule.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/PaymentMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/PaymentMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/PaymentSchedule.class" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/PaymentSchedule.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/SalariedClassification.class" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/SalariedClassification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/SalesReceipt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/TimeCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/TimeCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/TwoWeekPaySchedule.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/WeeklyPaymentSchedule.class" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/bin/main/be/heh/epm/domain/WeeklyPaymentSchedule.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/test/be/heh/epm/application/services/TestAddEmployee.class" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/bin/test/be/heh/epm/application/services/TestAddEmployee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/test/be/heh/epm/application/services/TestChangeEmployee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/test/be/heh/epm/application/services/TestDeleteEmployee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/test/be/heh/epm/application/services/TestPayDay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/test/be/heh/epm/application/services/TestPostSalesReceipt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/test/be/heh/epm/application/services/TestPostTimeCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/bin/test/be/heh/epm/domain/TestEmployee.class" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/bin/test/be/heh/epm/domain/TestEmployee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/ports/in/Context.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/ports/out/EmployeeGateway.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/ports/out/InMemoryEmployeeGateway.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/services/AddCommissionEmployee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/services/AddHourlyEmployee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/services/AddSalariedEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/services/AddSalariedEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/services/ChgEmpAddress.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/services/ChgEmpName.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/services/ChgEmpToCommission.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/services/ChgEmpToDirectDepositMethod.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/services/ChgEmpToHourly.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/services/ChgEmpToMailMethod.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/services/ChgEmpToSalaried.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/services/DeleteEmployee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/services/PayDay.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/services/PostSalesReceipt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/services/PostTimeCard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/CashMethod.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/CommissionClassification.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/DirectDepositMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/DirectDepositMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/HourlyClassification.java" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/HourlyClassification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/MailMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/MailMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/MonthlyPaymentSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/MonthlyPaymentSchedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/PaymentClassification.java" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/PaymentClassification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/PaymentMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/PaymentMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/PaymentSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/PaymentSchedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/SalariedClassification.java" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/SalariedClassification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/SalesReceipt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/TimeCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/TimeCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/TwoWeekPaySchedule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/WeeklyPaymentSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/domain/WeeklyPaymentSchedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/test/java/be/heh/epm/application/services/TestAddEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/src/test/java/be/heh/epm/application/services/TestAddEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/test/java/be/heh/epm/application/services/TestChangeEmployee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/test/java/be/heh/epm/application/services/TestDeleteEmployee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/test/java/be/heh/epm/application/services/TestPayDay.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/test/java/be/heh/epm/application/services/TestPostSalesReceipt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/test/java/be/heh/epm/application/services/TestPostTimeCard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/test/java/be/heh/epm/domain/TestEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/src/test/java/be/heh/epm/domain/TestEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/.project" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/.project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/.settings/org.eclipse.buildship.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/.settings/org.eclipse.buildship.core.prefs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/EPM-persistence/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/EPM-persistence/.classpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/EPM-persistence/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/EPM-persistence/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/EPM-persistence/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/EPM-persistence/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/EPM-persistence/.project" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/EPM-persistence/.project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/EPM-persistence/.settings/org.eclipse.buildship.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/EPM-persistence/.settings/org.eclipse.buildship.core.prefs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/EPM-persistence/bin/main/be/heh/epm/adapter/persistence/DataBaseHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPM-configuration/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPM-configuration/.settings/org.eclipse.buildship.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPM-configuration/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/ports/out/EmployeePort.java" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/ports/out/EmployeePort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/services/AddSalariedEmployee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/services/AddSalariedEmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/services/AddSalariedEmployeeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adapters/EPM-persistence/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/EPM-persistence/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/EPM-persistence/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/EPM-persistence/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/EPM-persistence/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/EPM-persistence/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/EPM-persistence/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/EPM-persistence/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/EPM-persistence/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/EPM-persistence/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/EPM-persistence/src/main/java/be/heh/epm/adapter/persistence/DataBaseHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/EPM-persistence/src/main/java/be/heh/epm/adapter/persistence/EmployeePersistenceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/EPM-persistence/src/main/java/be/heh/epm/adapter/persistence/EmployeePersistenceAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/EPM-persistence/src/test/java/be/heh/epm/adapter/persistence/EmployeePersistenceAdapterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/EPM-persistence/src/test/java/be/heh/epm/adapter/persistence/EmployeePersistenceAdapterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adapters/EPM-web/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/EPM-web/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/EPM-web/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/EPM-web/settings.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adapters/EPM-web/src/main/java/be/heh/epm/adapter/web/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/EPM-web/src/main/java/be/heh/epm/adapter/web/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/EPM-web/src/main/java/be/heh/epm/adapter/web/EpmWebApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/EPM-web/src/main/java/be/heh/epm/adapter/web/model/Employee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/EPM-web/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/EPM-web/src/test/java/be/heh/epm/adapter/web/EpmWebApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/epm_gr6.session.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/EPM-web/src/main/java/be/heh/epm/adapter/web/WebApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/EPM-web/src/test/java/be/heh/epm/adapter/web/EmployeeControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/EPM-web/src/test/java/be/heh/epm/adapter/web/EmployeeControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/common/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -150,7 +61,12 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ProjectEPM" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -160,6 +76,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -168,10 +85,21 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1jSJOcfQjhhc0TqqGQldE1yyZfj" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -184,6 +112,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -191,7 +120,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.notifications" />
+    <property name="settings.editor.selected.configurable" value="SQL Dialects" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
   <component name="RecentsManager">
@@ -199,6 +128,7 @@
       <recent name="be.heh.epm.domain" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\4) HEH MONS 2020-2021\Progra_réseau_Java\Projet\ProjectEPM\EPM-configuration\src\test\resources" />
       <recent name="C:\Users\Darky\IdeaProjects\EPM_gr6" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -217,127 +147,41 @@
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
+        <option value="DatabaseScript" />
         <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.WebApplication">
-    <configuration name="WebApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="be.heh.epm.adapter.web.WebApplication" />
-      <module name="ProjectEPM.adapters.EPM-web.main" />
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EpmApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="ProjectEPM.EPM-configuration.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="be.heh.epm.adapter.web.*" />
+          <option name="PATTERN" value="be.heh.epm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EPM_gr6" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--version" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" value="" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="TestChangeEmployee.chgEmpName" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;be.heh.epm.application.services.TestChangeEmployee.chgEmpName&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":EPM-core:test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="TestEmployee" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;be.heh.epm.domain.TestEmployee&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":EPM-core:test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="TestEmployee.createSalariedEmployee" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;be.heh.epm.domain.TestEmployee.createSalariedEmployee&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":EPM-core:test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="EpmWebApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="ProjectEPM.adapters.EPM-web.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="be.heh.epm.adapter.web.EpmWebApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EpmWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="epm-web.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="be.heh.epm.adapters.epmweb.EpmWebApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="be.heh.epm.EpmApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WebApplication" />
-        <item itemvalue="Gradle.EPM_gr6" />
-        <item itemvalue="Gradle.TestChangeEmployee.chgEmpName" />
-        <item itemvalue="Gradle.TestEmployee.createSalariedEmployee" />
-        <item itemvalue="Gradle.TestEmployee" />
+        <item itemvalue="Spring Boot.EpmApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -367,11 +211,28 @@
       <workItem from="1606734377901" duration="1559000" />
       <workItem from="1606817471363" duration="122000" />
       <workItem from="1606831253245" duration="5477000" />
+      <workItem from="1611393874638" duration="224000" />
+      <workItem from="1611402271531" duration="1163000" />
+      <workItem from="1611409829431" duration="4720000" />
+      <workItem from="1611565664873" duration="162000" />
+      <workItem from="1611565847289" duration="7688000" />
+      <workItem from="1611579153177" duration="796000" />
+      <workItem from="1611579974187" duration="194000" />
+      <workItem from="1611580298992" duration="7000" />
+      <workItem from="1611580541196" duration="4618000" />
+      <workItem from="1611586466193" duration="2841000" />
+      <workItem from="1611653269129" duration="267000" />
+      <workItem from="1611653548342" duration="167000" />
+      <workItem from="1611654266270" duration="4313000" />
+      <workItem from="1611658694798" duration="14729000" />
+      <workItem from="1611737325473" duration="135000" />
+      <workItem from="1611737468909" duration="370000" />
+      <workItem from="1611737852075" duration="10815000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -424,5 +285,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -7,6 +7,7 @@ package be.heh.epm.application.services;
 import be.heh.epm.application.ports.in.AddSalariedEmployeeUseCase;
 import be.heh.epm.application.ports.in.SalariedEmployeeValidating;
 import be.heh.epm.application.ports.out.EmployeePort;
+import be.heh.epm.common.UseCase;
 import be.heh.epm.domain.DirectDepositMethod;
 import be.heh.epm.domain.Employee;
 import be.heh.epm.domain.MonthlyPaymentSchedule;
@@ -15,6 +16,7 @@ import be.heh.epm.domain.PaymentMethod;
 import be.heh.epm.domain.PaymentSchedule;
 import be.heh.epm.domain.SalariedClassification;
 
+@UseCase
 public class AddSalariedEmployeeService implements AddSalariedEmployeeUseCase
 {
     // ======== Attributes ========

@@ -5,6 +5,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -22,33 +23,60 @@ import be.heh.epm.domain.SalariedClassification;
 @PersistenceAdapter
 public class EmployeePersistenceAdapter implements EmployeePort
 {
-    private static final Logger logger = LoggerFactory.getLogger(EmployeePersistenceAdapter.class);
-
-    private final JdbcTemplate jdbcTemplate;
-    private final SimpleJdbcInsert simpleJdbcInsertEmployee;
-    private final SimpleJdbcInsert simpleJdbcInsertSalariedClassification;
-    private final DataSource dataSource;
+    private String url = "jdbc:postgresql://127.0.0.1:5432/epmGr6";
+    private String user = "postgres";
+    private String password = "Test123*";
+    private Connection connection = null;
+    private Statement stmt;
 
     // ======== Constructeur ========
-    public EmployeePersistenceAdapter(JdbcTemplate jdbcTemplate, DataSource dataSource)
+    public EmployeePersistenceAdapter()
     {
-        this.jdbcTemplate = jdbcTemplate;
-        this.dataSource = dataSource;
-        this.simpleJdbcInsertEmployee = new SimpleJdbcInsert(dataSource).withTableName("employee")
-                .usingGeneratedKeyColumns("empid");
-        this.simpleJdbcInsertSalariedClassification = new SimpleJdbcInsert(dataSource).withTableName("salariedclassification");
+        Connect();
+    }
+
+    // ======== Connect ========
+    private Connection Connect()
+    {
+        try
+        {
+            this.connection = DriverManager.getConnection(this.url, this.user, this.password);
+            System.out.println("Connect to the database successfully");
+
+            stmt = this.connection.createStatement();
+            String sql = "CREATE TABLE employees" +
+                    "(empId SERIAL PRIMARY KEY ," +
+                    "name TEXT NOT NULL UNIQUE, " +
+                    "address CHAR(50), " +
+                    "mail VARCHAR)";
+            stmt.executeUpdate(sql);
+            stmt.close();
+        }
+        catch(SQLException e)
+        {
+            System.out.println("Unable to connect to database\n" + e.getMessage());
+        }
+
+        return this.connection;
     }
 
     // ======== Methods ========
     // ==== Get ====
     // Get employee
     @Override
-    public Employee getEmployee(int empID)
+    public Employee getEmployee(int empId)
+    {
+        return null;
+    }
+
+    /*
+    @Override
+    public Employee getEmployee(int empId)
     {
         try
         {
             Employee employee = jdbcTemplate.queryForObject("SELECT * FROM EMPLOYEE WHERE EMPID = ?",
-                    new Object[]{empID},
+                    new Object[]{empId},
                     (rs, rowNum) -> {
                         Employee e = new Employee();
                         e.setEmpId(rs.getInt("EMPID"));
@@ -58,17 +86,18 @@ public class EmployeePersistenceAdapter implements EmployeePort
 
                         return e;
                     });
-            logger.info("Recovery of the employee by id {} in the database",empID);
+            logger.info("Recovery of the employee by id {} in the database", empId);
 
             return employee;
         }
         catch (EmptyResultDataAccessException e)
         {
-            logger.error("Employee with id {} was not found",empID);
+            logger.error("Employee with id {} was not found", empId);
 
             return null;
         }
     }
+    */
 
     // Get ALL employees
     @Override
@@ -81,28 +110,34 @@ public class EmployeePersistenceAdapter implements EmployeePort
     @Override
     public Employee save(Employee employee)
     {
-        Map<String, Object> parameters = new HashMap<>(1);
-        parameters.put("name", employee.getName());
-        parameters.put("address", employee.getAddress());
-        parameters.put("mail", employee.getMail());
-        parameters.put("paymentclassificationtype",employee.getPayClassification().toString());
-        parameters.put("paymentmethodtype",employee.getPayMethod().toString());
-        parameters.put("paymentscheduletype",employee.getPaySchedule().toString());
+        String sql = "INSERT INTO public.employees(name, address, mail) VALUES (?, ?, ?)";
 
-        // Execute the query and get the generated key
-        Number newId = simpleJdbcInsertEmployee.executeAndReturnKey(parameters);
-
-        logger.info("Inserting salaried employee into database, generated key is: {}", newId);
-
-        employee.setEmpId((Integer) newId);
-
-        if(employee.getPayClassification().toString()=="salaried")
+        try (PreparedStatement ps = this.connection.prepareStatement(sql, new String[] { "empid" }))
         {
-            Map<String, Object> parametersSalariedClassification = new HashMap<>(1);
-            parametersSalariedClassification.put("EMPID", employee.getEmpId());
-            SalariedClassification salariedClassification = (SalariedClassification)employee.getPayClassification();
-            parametersSalariedClassification.put("MOUNT", salariedClassification.getSalary());
-            simpleJdbcInsertSalariedClassification.execute(parametersSalariedClassification);
+            ps.setString(1, employee.getName());
+            ps.setString(2, employee.getAddress());
+            ps.setString(3, employee.getMail());
+
+            int id = ps.executeUpdate();
+
+            if(id > 0)
+            {
+                try (ResultSet rs = ps.getGeneratedKeys())
+                {
+                    if(rs.next())
+                    {
+                        employee.setEmpId(rs.getInt("empid"));
+                    }
+                }
+                catch (SQLException e)
+                {
+                    System.out.println("Là ?\n" + e.getMessage());
+                }
+            }
+        }
+        catch (SQLException e)
+        {
+            System.out.println("Ou ici ?\n" + e.getMessage());
         }
 
         return employee;
@@ -110,8 +145,18 @@ public class EmployeePersistenceAdapter implements EmployeePort
 
     // ==== Delete ====
     @Override
-    public void deleteEmployee(int empID)
+    public void deleteEmployee(int empId)
     {
+        String sql = "DELETE FROM public.employees WHERE empid = ?";
 
+        try (PreparedStatement ps = this.connection.prepareStatement(sql))
+        {
+            ps.setInt(1, empId);
+            ps.executeUpdate();
+        }
+        catch (SQLException se)
+        {
+            System.out.println("Failed to delete the employee\n" + se);
+        }
     }
 }
