@@ -24,12 +24,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8a7f7ccf-d4a8-4d1d-8bf5-ee0b294c4989" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/ports/in/DeleteSalariedEmployeeValidating.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/ports/in/GetSalariedEmployeeUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/ports/in/GetSalariedEmployeeUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/ports/in/GetSalariedEmployeeValidating.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/services/GetSalariedEmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EPM-core/src/main/java/be/heh/epm/application/services/GetSalariedEmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/EPM-persistence/src/main/java/be/heh/epm/adapter/persistence/EmployeePersistenceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/EPM-persistence/src/main/java/be/heh/epm/adapter/persistence/EmployeePersistenceAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/EPM-web/src/main/java/be/heh/epm/adapter/web/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/EPM-web/src/main/java/be/heh/epm/adapter/web/EmployeeController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,32 +134,30 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.EmployeeControllerTest.createReturn201">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="Gradle.TestEmployee.createHourlyEmployee">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EmployeeControllerTest.createReturn201" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestAddEmployee" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;be.heh.epm.adapter.web.EmployeeControllerTest.createReturn201&quot;" />
+        <option name="scriptParameters" value="--tests &quot;be.heh.epm.application.services.TestAddEmployee&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":adapters:EPM-web:test" />
+            <option value=":EPM-core:test" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -175,18 +167,60 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="EmployeePersistenceAdapterTest.SalariedEmployeeSaveTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestEmployee" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;be.heh.epm.adapter.persistence.EmployeePersistenceAdapterTest.SalariedEmployeeSaveTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;be.heh.epm.domain.TestEmployee&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":adapters:EPM-persistence:test" />
+            <option value=":EPM-core:test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestEmployee.createHourlyEmployee" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;be.heh.epm.domain.TestEmployee.createHourlyEmployee&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":EPM-core:test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestEmployee.createSalariedEmployee" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;be.heh.epm.domain.TestEmployee.createSalariedEmployee&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":EPM-core:test" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -211,8 +245,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.EmployeeControllerTest.createReturn201" />
-        <item itemvalue="Gradle.EmployeePersistenceAdapterTest.SalariedEmployeeSaveTest" />
+        <item itemvalue="Gradle.TestEmployee.createHourlyEmployee" />
+        <item itemvalue="Gradle.TestEmployee.createSalariedEmployee" />
+        <item itemvalue="Gradle.TestEmployee" />
+        <item itemvalue="Gradle.TestAddEmployee" />
         <item itemvalue="Spring Boot.EpmApplication" />
       </list>
     </recent_temporary>
@@ -259,7 +295,8 @@
       <workItem from="1611658694798" duration="14729000" />
       <workItem from="1611737325473" duration="135000" />
       <workItem from="1611737468909" duration="370000" />
-      <workItem from="1611737852075" duration="18932000" />
+      <workItem from="1611737852075" duration="19023000" />
+      <workItem from="1611818745148" duration="2484000" />
     </task>
     <servers />
   </component>
